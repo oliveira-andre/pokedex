@@ -4,6 +4,8 @@ import PokemonsController from './app/controllers/PokemonsController';
 
 const routes = new Router();
 
-routes.get('/pokemons', PokemonsController.index);
+routes.get('/pokemons', (req, res) => {
+  return res.json({ ok: true });
+});
 
 export default routes;
