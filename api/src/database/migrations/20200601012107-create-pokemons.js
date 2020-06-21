@@ -36,7 +36,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model: 'pokemons', key: 'id' },
       },
-      file_id: {
+      avatar_id: {
         type: Sequelize.INTEGER,
         references: { model: 'files', key: 'id' },
       },
