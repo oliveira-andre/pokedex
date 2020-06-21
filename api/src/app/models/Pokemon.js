@@ -15,6 +15,7 @@ class Pokemon extends Model {
   }
 
   static associate(models) {
+    this.belongsTo(models.File, { foreignKey: 'avatar_id', as: 'avatar' });
     this.belongsTo(models.Pokemon, { foreignKey: 'evolution_id', as: 'evolution' });
   }
 }
