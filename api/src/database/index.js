@@ -3,8 +3,9 @@ import Sequelize from 'sequelize';
 import dbConfig from '../config/database';
 
 import Pokemon from '../app/models/Pokemon';
+import File from '../app/models/File';
 
-const models = [Pokemon];
+const models = [File, Pokemon];
 
 class Database {
   constructor() {
