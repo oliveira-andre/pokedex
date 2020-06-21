@@ -5,18 +5,18 @@ class Pokemon extends Model {
     super.init(
       {
         name: Sequelize.STRING,
-        type: Sequelize.ENUM, 
-        item: Sequelize.ITEM,
+        type: Sequelize.STRING, 
+        item: Sequelize.STRING,
         weakness: Sequelize.STRING,
         description: Sequelize.STRING,
     }, { sequelize });
 
     return this;
-  },
+  }
 
   static associate(models) {
     this.belongsTo(models.Pokemon, { foreignKey: 'evolution_id', as: 'evolution' });
   }
-};
+}
 
 export default Pokemon;
