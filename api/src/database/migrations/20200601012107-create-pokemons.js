@@ -1,4 +1,5 @@
 'use strict';
+const { pokemonTypes } = require('../../utils/enums');
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -17,10 +18,7 @@ module.exports = {
       },
       type: {
         type: Sequelize.ENUM,
-        values: [
-          'bug', 'dark', 'dragon', 'eletric', 'fairy', 'fighting', 'fire', 'flying', 'ghost', 'grass',
-          'ground', 'ice', 'normal', 'poison', 'psychic', 'rock', 'steel', 'water'
-        ],
+        values: pokemonTypes,
       },
       item: {
         type: Sequelize.STRING,
@@ -30,13 +28,17 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      description: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
       evolution_id: {
         type: Sequelize.INTEGER,
         references: { model: 'pokemons', key: 'id' },
       },
-      description: {
-        type: Sequelize.STRING,
-        allowNull: true,
+      file_id: {
+        type: Sequelize.INTEGER,
+        references: { model: 'files', key: 'id' },
       },
       created_at: {
         type: Sequelize.DATE,
