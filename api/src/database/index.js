@@ -4,7 +4,7 @@ import dbConfig from '../config/database';
 
 import Pokemon from '../app/models/Pokemon';
 
-const models = [];
+const models = [Pokemon];
 
 class Database {
   constructor() {
