@@ -24,3 +24,9 @@ associate avatar with pokemon
 ```
 curl -X "PUT" -d '{ "avatar_id": "8" }' -H 'Content-Type: Application/json' 'http://localhost:3333/pokemons/1' | jq
 ```
+
+find file by id
+
+```
+curl -X "GET" -H 'Content-Type: Application/json' 'http://localhost:3333/file/2' | jq
+```
