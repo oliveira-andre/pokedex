@@ -13,8 +13,14 @@ create a pokemon
 curl -X "POST" --data-raw '{ "name": "charmander", "type": "dragon", "item": "nothing", "weakness": "water", "description": "selvagem" }' -H 'Content-Type: Application/json' 'http://localhost:3333/pokemons'
 ```
 
-upload archive
+upload avatar file
 
 ```
 curl -X "POST" -F 'avatar=@/Users/codeman/Downloads/memes/charmander.png' 'http://localhost:3333/upload' | jq
+```
+
+associate avatar with pokemon
+
+```
+curl -X "PUT" -d '{ "avatar_id": "8" }' -H 'Content-Type: Application/json' 'http://localhost:3333/pokemons/1' | jq
 ```
