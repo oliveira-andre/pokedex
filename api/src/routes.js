@@ -14,4 +14,6 @@ routes.put('/pokemons/:id', PokemonsController.update);
 
 routes.post('/upload', upload.single('avatar'), FilesController.create);
 
+routes.get('/file/:id', FilesController.show);
+
 export default routes;
