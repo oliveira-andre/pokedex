@@ -7,6 +7,12 @@ class FilesController {
 
     return res.json(file);
   }
+
+  async show(req, res) {
+    const file = await File.findByPk(req.params.id);
+
+    return res.json(file);
+  }
 };
 
 export default new FilesController();
